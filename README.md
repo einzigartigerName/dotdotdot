@@ -11,6 +11,7 @@ git clone https://github.com/einzigartigerName/dotdotdot
 * [polybar](https://github.com/jaagr/polybar)
 * playerctl
 * pulseaudio-ctl
+* [xbright](https://github.com/snobb/xbright)
 * [dmenu](https://tools.suckless.org/dmenu/)
 * [Firefox](https://www.mozilla.org/en-US/firefox/new/)
 * [qutebrowser](https://qutebrowser.org/)
