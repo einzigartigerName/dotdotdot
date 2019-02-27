@@ -8,6 +8,7 @@ git clone https://github.com/einzigartigerName/dotdotdot
 
 ## Dependencies:
 * [i3-gaps](https://github.com/Airblader/i3)
+* [polybar](https://github.com/jaagr/polybar)
 * playerctl
 * pulseaudio-ctl
 * [dmenu](https://tools.suckless.org/dmenu/)
