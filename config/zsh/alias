@@ -1,0 +1,17 @@
+# Pacman
+alias pacman='sudo pacman'
+alias pkgupdate='sudo pacman -Syu'
+alias pkgclear='sudo pacman -R $(pacman -Qdtq)'
+
+# Tippfehler etc
+alias mkae='make'
+
+alias vim='nvim'
+
+# configs
+alias i3conf='nvim ~/.config/i3/config'
+alias polyconf='nvim ~/.config/polybar/config'
+
+# Dirs
+alias pr='cd ~/Programms'
+alias h='cd ~'

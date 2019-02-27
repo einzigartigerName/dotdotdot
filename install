@@ -1,15 +1,23 @@
 conf="$HOME/.config"
 scp="$HOME/.scripts"
 
-# install configs
+# ----------------- configs -----------------
 mkdir -p $conf
 
+# ZSH
+cp config/zsh/zshrc ~/.zshrc
+cp config/zsh/nelson.zsh-theme ~/.oh-my-zsh/themes
+cp config/zsh/alias ~/.alias
+# i3
 cp -r config/i3 $conf
+# Polybar
 cp -r config/polybar $conf
+# Tilda
 cp -r config/tilda $conf
+# Wallpaper
 cp config/wallpaper.jpg ~/.wallpaper.jpg
 
-# install scripts
+# ----------------- scripts -----------------
 mkdir -p $scp
 
 cp -r scripts/network $scp
