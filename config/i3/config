@@ -2,10 +2,6 @@
 set $mod Mod1
 set $win Mod4
 
-# Script-location
-set $scripts $HOME/.scripts
-set $bookmark $HOME/.scripts/network/.bm
-
 font pango:monospace 8
 
 floating_modifier $mod
@@ -86,10 +82,12 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+# restart i3 inplace
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
+# exit i3
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+# lock
+bindsym $win+e exec ~/.scripts/display/lock -l
 
 # resize window (you can also use the mouse for that)
 bindsym $mod+h resize shrink width 10 px or 10 ppt
@@ -115,8 +113,8 @@ bindsym Control+XF86AudioLowerVolume exec playerctl play-pause
 bindsym Control+XF86AudioRaiseVolume exec playerctl next
 
 # Browser
-bindsym $mod+w exec $scripts/network/bookmarks $bookmark
-bindsym $mod+Shift+w exec $scripts/network/managebm $bookmark
+bindsym $mod+w exec ~/.scripts/network/bookmarks $bookmark
+bindsym $mod+Shift+w exec ~/.scripts/network/managebm $bookmark
 
 # Startup
 exec_always --no-startup-id ~/.scripts/startup/polybar
