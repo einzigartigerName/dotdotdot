@@ -1,0 +1,15 @@
+conf="$HOME/.config"
+scp="$HOME/.scripts"
+
+# install configs
+mkdir -p $conf
+
+cp -r config/i3 $conf
+cp -r config/polybar $conf
+cp -r config/tilda $conf
+
+# install scripts
+mkdir -p $scp
+
+cp -r scripts/network $scp
+cp -r scripts/startup $scp

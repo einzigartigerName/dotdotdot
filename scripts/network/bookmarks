@@ -1,0 +1,25 @@
+#   Bookmark Format:
+#   <name> <url> [browser]
+
+# Browser
+firefox="firefox"
+qute="qutebrowser"
+surf="surf"
+
+# Read and select Bookmarks via dmenu
+selection="$(cat $1 | awk '{print $1}' | dmenu -i -l 7)"
+
+# Read URL
+url="$(cat $1 | grep $selection | awk '{print $2}')"
+
+# Read browser
+browser_selection="$(cat $1 | grep $selection | awk '{print $3}')"
+
+# Open
+browser=$surf
+case $browser_selection in
+    "firefox" )  browser=$firefox;;
+    "qute" )     browser=$qute;;
+esac
+
+$browser $url
