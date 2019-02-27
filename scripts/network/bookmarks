@@ -1,16 +1,28 @@
 #   Bookmark Format:
 #   <name> <url> [browser]
 
+# default duckduckgo search url
+duckduck="duckduckgo.com/?q="
+
 # Browser
 firefox="firefox"
 qute="qutebrowser"
 surf="surf"
 
 # Read and select Bookmarks via dmenu
-selection="$(cat $1 | awk '{print $1}' | dmenu -i -l 7)"
+selection="$(cat $1 | awk '{print $1}' | dmenu -i -l 7 -p "Web:")"
+if [ -z "${selection// }" ]; then
+    exit
+fi
 
 # Read URL
 url="$(cat $1 | grep $selection | awk '{print $2}')"
+
+# check if url is empty -> search in duckduckgo
+if [ -z "${url// }" ]; then
+    $surf "$duckduck$selection"
+    exit
+fi
 
 # Read browser
 browser_selection="$(cat $1 | grep $selection | awk '{print $3}')"

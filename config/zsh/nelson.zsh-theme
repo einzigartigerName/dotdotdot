@@ -21,4 +21,4 @@ vcs_status() {
     fi
 }
 
-PROMPT='%B%F{red}[%b%F{green}%n%f@%F{yellow}%m%F{red}%B]%f%b %2~ $(vcs_status)»%b '
+PROMPT='%B%F{red}[%b%F{blue}%n%f@%F{yellow}%m%F{red}%B]%f%b %1~ $(vcs_status)»%b '

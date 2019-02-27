@@ -13,5 +13,7 @@ alias i3conf='nvim ~/.config/i3/config'
 alias polyconf='nvim ~/.config/polybar/config'
 
 # Dirs
-alias pr='cd ~/Programms'
+alias p='cd ~/Programms'
+alias c='cd ~/Coding'
 alias h='cd ~'
+

@@ -16,22 +16,16 @@ bindsym $mod+q kill
 bindsym $mod+d exec dmenu_run
 
 # change focus
-bindsym $win+h focus left
-bindsym $win+j focus down
-bindsym $win+k focus up
-bindsym $win+l focus right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # move focused window
-bindsym $mod+space+h move left
-bindsym $mod+space+j move down
-bindsym $mod+space+k move up
-bindsym $mod+space+l move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 
 # split in horizontal orientation
@@ -45,7 +39,7 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -90,10 +84,10 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 bindsym $win+e exec ~/.scripts/display/lock -l
 
 # resize window (you can also use the mouse for that)
-bindsym $mod+h resize shrink width 10 px or 10 ppt
-bindsym $mod+j resize grow height 10 px or 10 ppt
-bindsym $mod+k resize shrink height 10 px or 10 ppt
-bindsym $mod+l resize grow width 10 px or 10 ppt
+bindsym $win+h resize shrink width 10 px or 10 ppt
+bindsym $win+j resize grow height 10 px or 10 ppt
+bindsym $win+k resize shrink height 10 px or 10 ppt
+bindsym $win+l resize grow width 10 px or 10 ppt
 
 # Gaps and Border
 gaps inner 15
@@ -113,6 +107,7 @@ bindsym Control+XF86AudioLowerVolume exec playerctl play-pause
 bindsym Control+XF86AudioRaiseVolume exec playerctl next
 
 # Browser
+set $bookmark ~/.scripts/network/.bm
 bindsym $mod+w exec ~/.scripts/network/bookmarks $bookmark
 bindsym $mod+Shift+w exec ~/.scripts/network/managebm $bookmark
 
