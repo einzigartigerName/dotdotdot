@@ -7,6 +7,7 @@ mkdir -p $conf
 cp -r config/i3 $conf
 cp -r config/polybar $conf
 cp -r config/tilda $conf
+cp config/wallpaper.jpg ~/.wallpaper.jpg
 
 # install scripts
 mkdir -p $scp
