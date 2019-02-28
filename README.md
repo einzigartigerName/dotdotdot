@@ -9,6 +9,7 @@ cd dotdotdot
 
 ## Dependencies:
 * [zsh](http://www.zsh.org/)
+* [dunst](https://dunst-project.org/)
 * [i3-gaps](https://github.com/Airblader/i3)
 * [polybar](https://github.com/jaagr/polybar)
 * [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)

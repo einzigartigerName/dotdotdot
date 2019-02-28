@@ -120,7 +120,12 @@ bindsym $mod+z exec zathura
 # opens htop in st
 bindsym $mod+p exec st -e htop
 
+# send time as notification
+bindsym $win+d exec notify-send $(date +"%H:%M")
+
+
 # Startup
+exec_always --no-startup-id ~/.scripts/startup/dunst
 exec_always --no-startup-id ~/.scripts/startup/polybar
 exec_always --no-startup-id feh --bg-scale ~/.wallpaper.jpg
 exec --no-startup-id tilda

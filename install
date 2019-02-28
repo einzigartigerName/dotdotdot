@@ -8,6 +8,8 @@ mkdir -p $conf
 cp config/zsh/zshrc ~/.zshrc
 cp config/zsh/nelson.zsh-theme ~/.oh-my-zsh/themes
 cp config/zsh/alias ~/.alias
+# dunst
+cp -r config/dunst $conf
 # i3
 cp -r config/i3 $conf
 # Polybar
