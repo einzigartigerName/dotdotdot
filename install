@@ -22,3 +22,4 @@ mkdir -p $scp
 
 cp -r scripts/network $scp
 cp -r scripts/startup $scp
+cp -r scripts/util $scp

@@ -5,8 +5,8 @@ alias pkgclear='sudo pacman -R $(pacman -Qdtq)'
 
 # Tippfehler etc
 alias mkae='make'
-
 alias vim='nvim'
+alias pping='ping -c 5 8.8.8.8'
 
 # configs
 alias i3conf='nvim ~/.config/i3/config'
@@ -16,4 +16,4 @@ alias polyconf='nvim ~/.config/polybar/config'
 alias p='cd ~/Programms'
 alias c='cd ~/Coding'
 alias h='cd ~'
-
+alias d='cd ~/Coding/dotdotdot'

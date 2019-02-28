@@ -1,0 +1,25 @@
+selection="$(echo -e "Logout\nShutdown\nRestart" | dmenu -i -p "What do you want to do?")"
+if [ -z "${selection// }" ]; then
+    exit
+fi
+
+action=""
+
+case $selection in
+	"Logout" )		action="Logout";;
+	"Shutdown" )	action="Shutdown";;
+	"Restart" )		action="Restart";;
+esac
+
+responds="$(echo -e "Yes\nNo" | dmenu -i -p "$action?")"
+if [ -z "${responds// }" ]; then
+    exit
+fi
+
+if [ $responds = "Yes" ]; then
+	case $responds in
+		"Logout" )		i3-msg exit;;
+		"Shutdown" )	ppoweroff -force;;
+		"Restart" )		reboot -force;;
+	esac
+fi

@@ -79,7 +79,7 @@ bindsym $mod+Shift+0 move container to workspace 10
 # restart i3 inplace
 bindsym $mod+Shift+r restart
 # exit i3
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $win+x exec ~/.scripts/util/shutdown
 # lock
 bindsym $win+e exec ~/.scripts/display/lock -l
 
@@ -110,6 +110,9 @@ bindsym Control+XF86AudioRaiseVolume exec playerctl next
 set $bookmark ~/.scripts/network/.bm
 bindsym $mod+w exec ~/.scripts/network/bookmarks $bookmark
 bindsym $mod+Shift+w exec ~/.scripts/network/managebm $bookmark
+
+# open zathura document-viewer
+bindsym $mod+z exec zathura
 
 # Startup
 exec_always --no-startup-id ~/.scripts/startup/polybar
