@@ -1,0 +1,33 @@
+MAX=25000
+MIN=1000
+STEP=125
+file=".rst"
+
+up () {
+    tmp=$(( $(cat $file) + $STEP ))
+    if [ $tmp -lt $MAX ]; then
+        redshift -P -O $tmp
+        echo $tmp > $file
+    fi
+    exit
+}
+
+down () {
+    tmp=$(($(cat $file) - $STEP ))
+    if [ $tmp -gt $MIN ]; then
+        redshift -P -O $tmp
+        echo $tmp > $file
+    fi
+    exit
+}
+
+usage () {
+    echo -e "Usage:\n\tup\traises the display temperature\n\tdown\tlowers the display temperature\n"
+    exit
+}
+
+case $1 in
+    "up" )      up;;
+    "down" )    down;;
+    *)          usage;;
+esac

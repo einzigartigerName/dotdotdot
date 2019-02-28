@@ -97,6 +97,9 @@ new_window 1pixel
 # Brightness Ctl
 bindsym XF86MonBrightnessUp exec xbright +75
 bindsym XF86MonBrightnessDown exec xbright -75
+# Redshift Ctl
+# bindsym Control+XF86MonBrightnessUp exec ~/.scripts/display/eyesave up
+# bindsym Control+XF86MonBrightnessDown exec ~/.scripts/display/eyesave down
 
 # Sound and MediaPlayer Ctl
 bindsym XF86AudioMute exec pulseaudio-ctl mute
@@ -113,6 +116,9 @@ bindsym $mod+Shift+w exec ~/.scripts/network/managebm $bookmark
 
 # open zathura document-viewer
 bindsym $mod+z exec zathura
+
+# opens htop in st
+bindsym $mod+p exec st -e htop
 
 # Startup
 exec_always --no-startup-id ~/.scripts/startup/polybar
