@@ -33,7 +33,6 @@ browser=$surf
 case $browser_selection in
     "firefox" )     browser=$firefox;;
     "qute" )        browser=$qute;;
-    * )             exit;;
 esac
 
 $browser $url
