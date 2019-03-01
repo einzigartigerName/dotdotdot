@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 conf="$HOME/.config"
 scp="$HOME/.scripts"
 

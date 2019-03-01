@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 selection="$(echo -e "Logout\nShutdown\nRestart" | dmenu -i -p "What do you want to do?")"
 if [ -z "${selection// }" ]; then
     exit
