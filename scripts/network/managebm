@@ -6,38 +6,54 @@
 # bookmarks
 file=$1
 
+check_input () {
+	if [ -z "${1// }" ]; then
+		exit 
+	fi
+}
+
 remove () {
     grep "$1 " $file -v > tmp_bm && mv tmp_bm $file
+}
+
+insert () {
+    # get name to display as bookmark
+    name="$(echo "" | dmenu -p "Name:")"
+    check_input $name
+
+    # get url for bookmark
+    url="$(echo "" | dmenu -p "URL:")"
+    check_input $url
+
+    # change default brower
+    bool="$(echo -e "yes\nno" | dmenu -p "Change default Browser?")"
+
+    browser=""
+    if [ "$bool" = "yes" ]; then
+        browser="$(echo -e "Firefox\nQutebrowser" | dmenu -i -p "Select Default Browser:")"
+        case $browser in
+            "Firefox" )     browser="firefox";;
+            "Qutebrowser" ) browser="qute";;
+            *)              exit;;
+        esac
+    fi
+
+    # Write bookmark
+    remove $name
+    echo "$name $url $browser" >> $file
 }
 
 # select between insert and remove
 mode="$(echo -e "Insert\nRemove" | dmenu -i -p "Bookmarks - Select Action:")"
 
-# Remove and exit
-if [ $mode = "Remove" ]; then
-    remove "$(cat $file | awk '{print $1}' | dmenu -i -l 7)"
-    exit
-fi
-
-# get name to display as bookmark
-name="$(echo "" | dmenu -p "Name:")"
-
-# get url for bookmark
-url="$(echo "" | dmenu -p "URL:")"
-
-# change default brower
-bool="$(echo -e "yes\nno" | dmenu -p "Change default Browser?")"
-
-browser=""
-if [ $bool = "yes" ]; then
-    browser="$(echo -e "Firefox\nQutebrowser" | dmenu -i -p "Select Default Browser:")"
-
-    case $browser in
-        "Firefox" )     browser="firefox";;
-        "Qutebrowser" ) browser="qute";;
-    esac
-fi
-
-# Write bookmark
-remove $name
-echo "$name $url $browser" >> $file
+# go trough options
+case $mode in
+    "Insert" )
+        insert
+        exit;;
+    "Remove" )      
+        remove "$(cat $file | awk '{print $1}' | dmenu -i -l 7)"
+        exit;;
+    *)
+        exit;;
+esac

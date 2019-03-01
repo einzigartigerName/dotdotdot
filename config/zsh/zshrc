@@ -15,3 +15,7 @@ test -r $HOME/.opam/opam-init/init.zsh && . $HOME/.opam/opam-init/init.zsh > /de
 
 # Alias
 source ~/.alias
+
+# Export vars
+export EDITOR=nvim
+export PAGER=most

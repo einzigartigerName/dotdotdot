@@ -11,6 +11,7 @@ case $selection in
 	"Logout" )		action="Logout";;
 	"Shutdown" )	action="Shutdown";;
 	"Restart" )		action="Restart";;
+	* )				exit;;
 esac
 
 responds="$(echo -e "Yes\nNo" | dmenu -i -p "$action?")"
@@ -19,9 +20,10 @@ if [ -z "${responds// }" ]; then
 fi
 
 if [ $responds = "Yes" ]; then
-	case $responds in
+	case $selection in
 		"Logout" )		i3-msg exit;;
-		"Shutdown" )	ppoweroff -force;;
+		"Shutdown" )	poweroff -force;;
 		"Restart" )		reboot -force;;
+		* )				exit;;
 	esac
 fi

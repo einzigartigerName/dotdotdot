@@ -19,7 +19,6 @@ fi
 
 # Read URL
 url="$(cat $1 | grep $selection | awk '{print $2}')"
-
 # check if url is empty -> search in duckduckgo
 if [ -z "${url// }" ]; then
     $surf "$duckduck$selection"
@@ -32,8 +31,9 @@ browser_selection="$(cat $1 | grep $selection | awk '{print $3}')"
 # Open
 browser=$surf
 case $browser_selection in
-    "firefox" )  browser=$firefox;;
-    "qute" )     browser=$qute;;
+    "firefox" )     browser=$firefox;;
+    "qute" )        browser=$qute;;
+    * )             exit;;
 esac
 
 $browser $url
