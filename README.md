@@ -6,7 +6,7 @@ git clone https://github.com/einzigartigerName/dotdotdot
 cd dotdotdot
 ./install [option]
 ```
-### Usgae
+### Usage
 ```
 Usage:
     -c  install configs
