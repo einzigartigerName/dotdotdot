@@ -29,10 +29,10 @@ Usage:
 * [qutebrowser](https://qutebrowser.org/)
 * [surf](https://surf.suckless.org/)
 * [redshift](http://jonls.dk/redshift/)
-* zathura
-* feh
-* playerctl
-* pulseaudio-ctl
+* [zathura](https://wiki.archlinux.org/index.php/Zathura)
+* [feh](https://wiki.archlinux.org/index.php/Feh)
+* [playerctl](https://github.com/acrisci/playerctl)
+* [pulseaudio-ctl](https://github.com/graysky2/pulseaudio-ctl)
 
 ## Credits
 * Lockscreen: I am using the [betterlockscreen by pavanjadhaw](https://github.com/pavanjadhaw/betterlockscreen)
