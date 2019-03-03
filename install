@@ -3,28 +3,161 @@
 conf="$HOME/.config"
 scp="$HOME/.scripts"
 
-# ----------------- configs -----------------
-mkdir -p $conf
+# prints the usage of this script
+print_usage () {
+    printf "Usage:\n\t-c\tinstall just the configs\n\t-s\tinstall just the scripts\n\t-d\tinstall just the dependencies of this setup\n\t-a\tinstall configs, scripts and dependencies\n"
+}
 
-# ZSH
-cp config/zsh/zshrc ~/.zshrc
-cp config/zsh/nelson.zsh-theme ~/.oh-my-zsh/themes
-cp config/zsh/alias ~/.alias
-# dunst
-cp -r config/dunst $conf
-# i3
-cp -r config/i3 $conf
-# Polybar
-cp -r config/polybar $conf
-# Tilda
-cp -r config/tilda $conf
-# Wallpaper
-cp config/wallpaper.jpg ~/.wallpaper.jpg
+# install config to $conf
+install_config () {
+    # ----------------- configs -----------------
+    mkdir -p $conf
 
-# ----------------- scripts -----------------
-mkdir -p $scp
+    # ZSH
+    cp config/zsh/zshrc ~/.zshrc
+    cp config/zsh/nelson.zsh-theme ~/.oh-my-zsh/themes
+    cp config/zsh/alias ~/.alias
+    # dunst
+    cp -r config/dunst $conf
+    # i3
+    cp -r config/i3 $conf
+    # Polybar
+    cp -r config/polybar $conf
+    # Tilda
+    cp -r config/tilda $conf
+    # Wallpaper
+    cp config/wallpaper.jpg ~/.wallpaper.jpg
 
-cp -r scripts/network $scp
-cp -r scripts/startup $scp
-cp -r scripts/util $scp
-cp -r scripts/display $scp
+    echo "DONE: installing configs"
+}
+
+# install scripts to $scp
+install_scripts () {
+    # ----------------- scripts -----------------
+    mkdir -p $scp
+
+    cp -r scripts/network $scp
+    cp -r scripts/startup $scp
+    cp -r scripts/util $scp
+    cp -r scripts/display $scp
+
+    echo "DONE: installing scripts"
+}
+
+install_dependencies () {
+
+    # Installs from official Repos
+    printf "--------------- git ---------------\n"
+    sudo pacman -S git
+    printf "DONE: installing git\n\n"
+
+    printf "--------------- i3-gaps ---------------\n"
+    sudo pacman -S i3-gaps
+    printf "DONE: installing i3-gaps\n\n"
+
+    printf "--------------- dunst ---------------\n"
+    sudo pacman -S dunst
+    printf "DONE: installing dunst\n\n"
+
+    printf "--------------- Tilda ---------------\n"
+    sudo pacman -S tilda
+    printf "DONE: installing Tilda\n\n"
+
+    printf "--------------- Firefox ---------------\n"
+    sudo pacman -S firefox
+    printf "DONE: installing Firefox\n\n"
+
+    printf "--------------- qutebrowser ---------------\n"
+    sudo pacman -S qutebrowser
+    printf "DONE: installing qutebrowser\n\n"
+
+    printf "--------------- surf ---------------\n"
+    sudo pacman -S surf
+    printf "DONE: installing surf\n\n"
+
+    printf "--------------- feh ---------------\n"
+    sudo pacman -S feh
+    printf "DONE: installing feh\n\n"
+
+    printf "--------------- pulseaudio ---------------\n"
+    sudo pacman -S pulseaudio
+    printf "DONE: installing pulseaudio\n\n"
+
+    printf "--------------- zathura ---------------\n"
+    sudo pacman -S zathura zathura-pdf-mupdf
+    printf "DONE: installing zathura\n\n"
+
+    printf "--------------- Redshift ---------------\n"
+    sudo pacman -S redshift
+    printf "DONE: installing Redshift\n\n"
+
+    # installs via git
+    cd ~/
+    mkdir -p Programms
+    cd Programms
+
+    printf "--------------- dmenu ---------------\n"
+    git clone https://github.com/einzigartigername/dmenu
+    cd dmenu
+    sudo make install clean
+    cd ..
+    printf "DONE: installing dmenu\n\n"
+
+    printf "--------------- st ---------------\n"
+    git clone https://github.com/LukeSmithxyz/st.git
+    cd st
+    sudo make install clean
+    cd ..
+    printf "DONE: installing st\n\n"
+
+    printf "--------------- yay ---------------\n"
+    git clone https://aur.archlinux.org/yay.git
+    cd yay
+    makepkg -sic
+    cd ..
+    printf "DONE: installing yay\n\n"
+
+    printf "--------------- oh-my-zsh ---------------\n"
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    printf "DONE: installing oh-my-zsh\n\n"
+
+    printf "--------------- xbright ---------------\n"
+    https://github.com/snobb/xbright.git
+    cd xbright
+    sudo make install clean
+    cd ..
+    printf "DONE: installing xbright\n\n"
+
+    # installs via yay
+    printf "--------------- polybar ---------------\n"
+    yay -S polybar
+    printf "DONE: installing polybar\n\n"
+
+    printf "--------------- playerctl ---------------\n"
+    yay -S playerctl
+    printf "DONE: installing playerctl\n\n"
+
+    printf "--------------- pulseaudio-ctl ---------------\n"
+    yay -S pulseaudio-ctl
+    printf "DONE: installing pulseaudio-ctl\n\n"
+
+    echo "DONE: installing dependencies"
+}
+
+case $1 in
+    "-a" )
+        install_dependencies
+        install_config
+        install_scripts
+        exit;;
+    "-c" )
+        install_config
+        exit;;
+    "-s" )
+        install_scripts
+        exit;;
+    "-d" )
+        install_dependencies
+        exit;;
+    * )     print_usage;;
+esac

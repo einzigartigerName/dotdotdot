@@ -30,7 +30,7 @@ init_filenames() {
 	    datecolor=ffffffff
 	    loginbox=00000066
 		font="sans-serif"
-      	locktext='date +"%A, %d. %B %Y"'
+		locktext="%A, %d. %B %Y" # %A, %d. %B %Y
 	fi
 
 	# create folder in ~/.cache/i3lock directory

@@ -4,7 +4,15 @@
 ```
 git clone https://github.com/einzigartigerName/dotdotdot
 cd dotdotdot
-./install
+./install [option]
+```
+### Usgae
+```
+Usage:
+    -c  install configs
+    -s  install scripts
+    -d  install dependencies
+    -a  install all
 ```
 
 ## Dependencies:
