@@ -38,7 +38,7 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+bindsym $mod+a layout stacking
 bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -49,7 +49,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+bindsym $win+p focus parent
 
 
 # switch to workspace
@@ -130,6 +130,7 @@ exec_always --no-startup-id ~/.scripts/startup/polybar
 exec_always --no-startup-id feh --bg-scale ~/.wallpaper.jpg
 exec --no-startup-id tilda
 exec --no-startup-id i3-msg 'workspace 10' && spotify
+exec --no-startup-id i3-msg 'workspace 9' && franz
 
-
-bindsym $win+f [class="Spotify"] focus
+bindsym $mod+c [class="Franz"] focus
+bindsym $mod+s [class="Spotify"] focus
