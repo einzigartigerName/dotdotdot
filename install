@@ -40,6 +40,7 @@ install_scripts () {
     cp -r scripts/startup $scp
     cp -r scripts/util $scp
     cp -r scripts/display $scp
+    cp -r scripts/polybar $scp
 
     echo "DONE: installing scripts"
 }

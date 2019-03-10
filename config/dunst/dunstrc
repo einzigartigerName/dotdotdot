@@ -5,7 +5,7 @@
 
     # The geometry of the window:
     #   [{width}]x{height}[+/-{x}+/-{y}]
-    geometry = "300x5-30+20"
+    geometry = "300x5-30+33"
     indicate_hidden = no
     transparency = 0
     notification_height = 0
@@ -111,3 +111,8 @@
     foreground = "#ffffff"
     frame_color = "#ff0000"
     timeout = 0
+
+# ignore notifications from Spotify
+[spotify]
+    appname = "Spotify"
+    format = ""
