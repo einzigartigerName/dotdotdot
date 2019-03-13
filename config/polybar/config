@@ -53,7 +53,7 @@ font-2 = siji:pixelsize=10;1
 modules-left = i3
 ;modules-left = i3 spotify
 modules-center = clock
-modules-right = filesystem pulseaudio memory cpu wlan eth battery temperature date
+modules-right = filesystem pulseaudio memory cpu battery temperature wlan eth date
 
 tray-position = right
 tray-padding = 2
@@ -61,22 +61,7 @@ tray-padding = 2
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-
-[module/xkeyboard]
-type = internal/xkeyboard
-blacklist-0 = num lock
-
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = ${colors.secondary}
-
-label-layout = %layout%
-label-layout-underline = ${colors.secondary}
-
-label-indicator-padding = 2
-label-indicator-margin = 1
-label-indicator-background = ${colors.secondary}
-label-indicator-underline = ${colors.secondary}
+monitor = eDP1
 
 [module/filesystem]
 type = internal/fs
@@ -207,16 +192,16 @@ warn-temperature = 60
 
 format = <ramp> <label>
 format-underline = #f50a4d
-format-warn = <ramp> <label-warn>
+format-warn = <label-warn>
 format-warn-underline = ${self.format-underline}
 
 label = %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
+ramp-0 =
+ramp-1 =
+ramp-2 =
 ramp-foreground = ${colors.foreground-alt}
 
 [settings]
@@ -231,9 +216,9 @@ margin-bottom = 5
 ; Custom Modules
 ;[module/spotify]
 ;type = custom/script
-; does not show up... Don't know why..
+; ;does not show up... Don't know why..
 ;exec = python ~/.scripts/polybar/spotify_status.py
-;tail = true
+;trail = true
 
 
 [module/battery]
