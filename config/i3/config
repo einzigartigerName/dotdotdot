@@ -81,7 +81,7 @@ bindsym $mod+Shift+r restart
 # exit i3
 bindsym $win+x exec ~/.scripts/util/shutdown
 # lock
-bindsym $win+e exec ~/.scripts/display/lock -l
+bindsym $win+e exec ~/.scripts/display/lock -l && playerctl pause
 
 # resize window (you can also use the mouse for that)
 bindsym $win+h resize shrink width 10 px or 10 ppt
