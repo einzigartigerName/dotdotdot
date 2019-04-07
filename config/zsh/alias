@@ -6,6 +6,10 @@ alias pkgclear='sudo pacman -R $(pacman -Qdtq)'
 # Tippfehler etc
 alias mkae='make'
 alias vim='nvim'
+
+# Network
+alias ns='sudo netctl start'
+alias nsa='sudo netctl stop-all'
 alias pping='ping -c 5 8.8.8.8'
 
 # configs
@@ -14,8 +18,10 @@ alias polyconf='nvim ~/.config/polybar/config'
 
 # Dirs
 alias p='cd ~/Programms'
-alias c='cd ~/Coding'
+alias cc='cd ~/Coding'
+alias c='cd $(find ~/Coding -maxdepth 1 -type d | fzf | xargs -r)'
 alias h='cd ~'
 alias d='cd ~/Coding/dotdotdot'
 alias s='cd ~/.scripts'
 alias t='cd ~/TUM'
+alias v='code .'

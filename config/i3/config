@@ -134,3 +134,4 @@ exec --no-startup-id i3-msg 'workspace 9' && franz
 
 bindsym $mod+c [class="Franz"] focus
 bindsym $mod+s [class="Spotify"] focus
+bindsym $mod+m [class="Thunderbird"] focus

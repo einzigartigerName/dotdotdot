@@ -31,6 +31,7 @@ Usage:
 * [redshift](http://jonls.dk/redshift/)
 * [zathura](https://wiki.archlinux.org/index.php/Zathura)
 * [feh](https://wiki.archlinux.org/index.php/Feh)
+* [fzf](https://github.com/junegunn/fzf)
 * [playerctl](https://github.com/acrisci/playerctl)
 * [pulseaudio-ctl](https://github.com/graysky2/pulseaudio-ctl)
 

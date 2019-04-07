@@ -19,3 +19,4 @@ source ~/.alias
 # Export vars
 export EDITOR=nvim
 export PAGER=most
+export FZF_DEFAULT_OPTS="--layout=reverse --inline-info"

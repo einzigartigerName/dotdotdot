@@ -92,6 +92,10 @@ install_dependencies () {
     sudo pacman -S redshift
     printf "DONE: installing Redshift\n\n"
 
+    printf "--------------- fzf ---------------\n"
+    sudo pacman -S redshift
+    printf "DONE: installing Redshift\n\n"    
+
     # installs via git
     cd ~/
     mkdir -p Programms
