@@ -34,6 +34,8 @@ Usage:
 * [fzf](https://github.com/junegunn/fzf)
 * [playerctl](https://github.com/acrisci/playerctl)
 * [pulseaudio-ctl](https://github.com/graysky2/pulseaudio-ctl)
+* [arandr](https://christian.amsuess.com/tools/arandr/)
 
 ## Credits
-* Lockscreen: I am using the [betterlockscreen by pavanjadhaw](https://github.com/pavanjadhaw/betterlockscreen)
+* Lockscreen: I am using the [betterlockscreen](https://github.com/pavanjadhaw/betterlockscreen) by pavanjadhaw
+* Display Selection: [Script](https://github.com/LukeSmithxyz/voidrice/blob/master/.scripts/i3cmds/displayselect) by LukeSmitxyz

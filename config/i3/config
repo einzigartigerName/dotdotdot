@@ -81,7 +81,7 @@ bindsym $mod+Shift+r restart
 # exit i3
 bindsym $win+x exec ~/.scripts/util/shutdown
 # lock
-bindsym $win+e exec ~/.scripts/display/lock -l && playerctl pause
+bindsym $win+e exec ~/.scripts/util/lock -l && playerctl pause
 
 # resize window (you can also use the mouse for that)
 bindsym $win+h resize shrink width 10 px or 10 ppt
@@ -94,12 +94,15 @@ gaps inner 15
 client.focused #ee7600 #000000 #000000 #000000 #ee7600
 new_window 1pixel
 
+# Display select
+bindsym $mod+Shift+d exec ~/.scripts/util/displayselect
+
 # Brightness Ctl
 bindsym XF86MonBrightnessUp exec xbright +75
 bindsym XF86MonBrightnessDown exec xbright -75
 # Redshift Ctl
-# bindsym Control+XF86MonBrightnessUp exec ~/.scripts/display/eyesave up
-# bindsym Control+XF86MonBrightnessDown exec ~/.scripts/display/eyesave down
+# bindsym Control+XF86MonBrightnessUp exec ~/.scripts/util/eyesave up
+# bindsym Control+XF86MonBrightnessDown exec ~/.scripts/util/eyesave down
 
 # Sound and MediaPlayer Ctl
 bindsym XF86AudioMute exec pulseaudio-ctl mute

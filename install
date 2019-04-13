@@ -39,7 +39,6 @@ install_scripts () {
     cp -r scripts/network $scp
     cp -r scripts/startup $scp
     cp -r scripts/util $scp
-    cp -r scripts/display $scp
     cp -r scripts/polybar $scp
 
     echo "DONE: installing scripts"
@@ -94,7 +93,11 @@ install_dependencies () {
 
     printf "--------------- fzf ---------------\n"
     sudo pacman -S redshift
-    printf "DONE: installing Redshift\n\n"    
+    printf "DONE: installing fzf\n\n"    
+
+    printf "--------------- arandr ---------------\n"
+    sudo pacman -S arandr
+    printf "DONE: installing arandr\n\n"   
 
     # installs via git
     cd ~/
