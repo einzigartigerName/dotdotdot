@@ -3,6 +3,29 @@
 conf="$HOME/.config"
 scp="$HOME/.scripts"
 
+DEPS_PACMAN=(
+    "git"
+    "i3-gaps"
+    "dunst"
+    "tilda"
+    "firefox"
+    "qutebrowser"
+    "surf"
+    "pulseaudio"
+    "feh"
+    "fzf"
+    "zathura"
+    "zathura-pdf-mupdf"
+    "redshift"
+    "arandr"
+)
+
+DEPS_AUR=(
+    "polybar"
+    "playerctl"
+    "pulseaudio-ctl"
+)
+
 # prints the usage of this script
 print_usage () {
     printf "Usage:\n\t-c\tinstall just the configs\n\t-s\tinstall just the scripts\n\t-d\tinstall just the dependencies of this setup\n\t-a\tinstall configs, scripts and dependencies\n"
@@ -47,57 +70,23 @@ install_scripts () {
 install_dependencies () {
 
     # Installs from official Repos
-    printf "--------------- git ---------------\n"
-    sudo pacman -S git
-    printf "DONE: installing git\n\n"
+    printf "----------- install deps via pacman -----------"
+    repos=""
+    for item in ${DEPS_PACMAN[*]}
+    do
+        repos="$repos $item"
+    done
+    sudo pacman -S $repos
 
-    printf "--------------- i3-gaps ---------------\n"
-    sudo pacman -S i3-gaps
-    printf "DONE: installing i3-gaps\n\n"
 
-    printf "--------------- dunst ---------------\n"
-    sudo pacman -S dunst
-    printf "DONE: installing dunst\n\n"
-
-    printf "--------------- Tilda ---------------\n"
-    sudo pacman -S tilda
-    printf "DONE: installing Tilda\n\n"
-
-    printf "--------------- Firefox ---------------\n"
-    sudo pacman -S firefox
-    printf "DONE: installing Firefox\n\n"
-
-    printf "--------------- qutebrowser ---------------\n"
-    sudo pacman -S qutebrowser
-    printf "DONE: installing qutebrowser\n\n"
-
-    printf "--------------- surf ---------------\n"
-    sudo pacman -S surf
-    printf "DONE: installing surf\n\n"
-
-    printf "--------------- feh ---------------\n"
-    sudo pacman -S feh
-    printf "DONE: installing feh\n\n"
-
-    printf "--------------- pulseaudio ---------------\n"
-    sudo pacman -S pulseaudio
-    printf "DONE: installing pulseaudio\n\n"
-
-    printf "--------------- zathura ---------------\n"
-    sudo pacman -S zathura zathura-pdf-mupdf
-    printf "DONE: installing zathura\n\n"
-
-    printf "--------------- Redshift ---------------\n"
-    sudo pacman -S redshift
-    printf "DONE: installing Redshift\n\n"
-
-    printf "--------------- fzf ---------------\n"
-    sudo pacman -S redshift
-    printf "DONE: installing fzf\n\n"    
-
-    printf "--------------- arandr ---------------\n"
-    sudo pacman -S arandr
-    printf "DONE: installing arandr\n\n"   
+    printf "----------- install deps from aur -----------"
+    # Installs from official Repos
+    repos_aur=""
+    for item in ${DEPS_aur[*]}
+    do
+        repos_aur="$repos_aur $item"
+    done
+    yay -S $repos_aur
 
     # installs via git
     cd ~/
@@ -135,19 +124,6 @@ install_dependencies () {
     sudo make install clean
     cd ..
     printf "DONE: installing xbright\n\n"
-
-    # installs via yay
-    printf "--------------- polybar ---------------\n"
-    yay -S polybar
-    printf "DONE: installing polybar\n\n"
-
-    printf "--------------- playerctl ---------------\n"
-    yay -S playerctl
-    printf "DONE: installing playerctl\n\n"
-
-    printf "--------------- pulseaudio-ctl ---------------\n"
-    yay -S pulseaudio-ctl
-    printf "DONE: installing pulseaudio-ctl\n\n"
 
     echo "DONE: installing dependencies"
 }
