@@ -112,6 +112,12 @@
     frame_color = "#ff0000"
     timeout = 0
 
+# for only summary
+# just use -a "MISC" on notify-send
+[misc]
+    appname = "MISC"
+    format = "<b>%s</b>"
+
 # ignore notifications from Spotify
 [spotify]
     appname = "Spotify"

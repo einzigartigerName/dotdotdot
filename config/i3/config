@@ -124,8 +124,10 @@ bindsym $mod+z exec zathura
 bindsym $mod+p exec st -e htop
 
 # send time as notification
-bindsym $win+d exec notify-send $(date +"%H:%M")
+bindsym $win+d exec notify-send -a "MISC" $(date +"%H:%M") -t 1000
 
+# simple calculations in dmenu
+bindsym $win+c exec notify-send -a "MISC" $(echo "" | dmenu -p "Calc:" | bc)
 
 # Startup
 exec_always --no-startup-id ~/.scripts/startup/dunst

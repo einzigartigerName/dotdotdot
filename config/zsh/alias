@@ -18,10 +18,18 @@ alias polyconf='nvim ~/.config/polybar/config'
 
 # Dirs
 alias p='cd ~/Programms'
-alias cc='cd ~/Coding'
 alias c='cd $(find ~/Coding -maxdepth 1 -type d | fzf | xargs -r)'
+alias cc='cd $(find ~/Coding -maxdepth 1 -type d | fzf | xargs -r) && code .'
 alias h='cd ~'
 alias d='cd ~/Coding/dotdotdot'
 alias s='cd ~/.scripts'
-alias t='cd ~/TUM'
 alias v='code .'
+
+# TUM
+alias t='cd ~/TUM'
+alias la='cd ~/TUM/LA'
+alias theo='cd ~/TUM/THEO'
+alias theop='cd ~/TUM/THEO/code/theo'
+alias theou='cd ~/TUM/THEO/uebungen/theo'
+alias gad='cd ~/TUM/GAD/gad'
+alias rnvs='cd ~/TUM/RNVS'

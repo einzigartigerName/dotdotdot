@@ -50,8 +50,8 @@ font-0 = fixed:pixelsize=8;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
-modules-left = i3
-;modules-left = i3 spotify
+;modules-left = i3
+modules-left = i3 spotify
 modules-center = clock
 modules-right = filesystem pulseaudio memory cpu battery temperature wlan eth date
 
@@ -214,12 +214,11 @@ margin-bottom = 5
 
 
 ; Custom Modules
-;[module/spotify]
-;type = custom/script
+[module/spotify]
+type = custom/script
 ; ;does not show up... Don't know why..
-;exec = python ~/.scripts/polybar/spotify_status.py
-;trail = true
-
+exec = python ~/.scripts/polybar/spotify_status/spotify_status.py
+tail = true
 
 [module/battery]
 type = custom/script
