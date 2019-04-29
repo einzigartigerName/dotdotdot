@@ -82,7 +82,7 @@ install_dependencies () {
     printf "----------- install deps from aur -----------"
     # Installs from official Repos
     repos_aur=""
-    for item in ${DEPS_aur[*]}
+    for item in ${DEPS_AUR[*]}
     do
         repos_aur="$repos_aur $item"
     done
@@ -125,7 +125,7 @@ install_dependencies () {
     cd ..
     printf "DONE: installing xbright\n\n"
 
-    echo "DONE: installing dependencies"
+    printf "----------- DONE -----------"
 }
 
 case $1 in
