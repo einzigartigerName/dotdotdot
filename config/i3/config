@@ -63,6 +63,9 @@ bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
+bindsym $mod+s workspace S
+bindsym $mod+c workspace C
+bindsym $mod+m workspace M
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -75,6 +78,9 @@ bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+s move container to workspace S
+bindsym $mod+Shift+c move container to workspace C
+bindsym $mod+Shift+m move container to workspace M
 
 # restart i3 inplace
 bindsym $mod+Shift+r restart
@@ -134,9 +140,6 @@ exec_always --no-startup-id ~/.scripts/startup/dunst
 exec_always --no-startup-id ~/.scripts/startup/polybar
 exec_always --no-startup-id feh --bg-scale ~/.wallpaper.jpg
 exec --no-startup-id tilda
-exec --no-startup-id i3-msg 'workspace 10' && spotify
-exec --no-startup-id i3-msg 'workspace 9' && franz
-
-bindsym $mod+c [class="Franz"] focus
-bindsym $mod+s [class="Spotify"] focus
-bindsym $mod+m [class="Thunderbird"] focus
+exec --no-startup-id i3-msg 'workspace S' && spotify
+exec --no-startup-id i3-msg 'workspace C' && franz
+exec --no-startup-id i3-msg 'workspace M' && thunderbird
