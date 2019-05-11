@@ -24,7 +24,6 @@ Usage:
 * [xbright](https://github.com/snobb/xbright)
 * [st](https://st.suckless.org/)
 * [dmenu](https://tools.suckless.org/dmenu/) (I am using my fork of [dmenu2](https://github.com/einzigartigerName/dmenu))
-* [Tilda](https://github.com/lanoxx/tilda)
 * [Firefox](https://www.mozilla.org/en-US/firefox/new/)
 * [qutebrowser](https://qutebrowser.org/)
 * [surf](https://surf.suckless.org/)

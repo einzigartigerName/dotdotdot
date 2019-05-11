@@ -7,7 +7,6 @@ DEPS_PACMAN=(
     "git"
     "i3-gaps"
     "dunst"
-    "tilda"
     "firefox"
     "qutebrowser"
     "surf"
