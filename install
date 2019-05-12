@@ -45,8 +45,6 @@ install_config () {
     cp -r config/i3 $conf
     # Polybar
     cp -r config/polybar $conf
-    # Tilda
-    cp -r config/tilda $conf
     # Wallpaper
     cp config/wallpaper.jpg ~/.wallpaper.jpg
 

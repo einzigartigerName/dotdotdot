@@ -2,7 +2,10 @@
 set $mod Mod1
 set $win Mod4
 
+# Font
 font pango:monospace 8
+
+set $resize 2
 
 floating_modifier $mod
 
@@ -90,10 +93,10 @@ bindsym $win+x exec ~/.scripts/util/shutdown
 bindsym $win+e exec ~/.scripts/util/lock -l && playerctl pause
 
 # resize window (you can also use the mouse for that)
-bindsym $win+h resize shrink width 10 px or 10 ppt
-bindsym $win+j resize grow height 10 px or 10 ppt
-bindsym $win+k resize shrink height 10 px or 10 ppt
-bindsym $win+l resize grow width 10 px or 10 ppt
+bindsym $win+h resize shrink width $resize px or $resize ppt
+bindsym $win+j resize grow height $resize px or $resize ppt
+bindsym $win+k resize shrink height $resize px or $resize  ppt
+bindsym $win+l resize grow width $resize px or $resize ppt
 
 # Gaps and Border
 gaps inner 15
