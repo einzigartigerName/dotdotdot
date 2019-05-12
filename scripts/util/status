@@ -1,0 +1,6 @@
+#!/usr/bin/env zsh
+
+battery=$(~/.scripts/polybar/battery)
+time=$(date +"%H:%M")
+
+notify-send -a "MISC" "$time | $battery" -t 1000 $out
