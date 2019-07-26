@@ -3,4 +3,4 @@
 battery=$(~/.scripts/polybar/battery)
 time=$(date +"%H:%M")
 
-notify-send -a "MISC" "$time | $battery" -t 1000 $out
+notify-send -a "MISC" "$time | $battery" -t 1500

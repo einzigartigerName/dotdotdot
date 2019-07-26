@@ -122,3 +122,7 @@
 [spotify]
     appname = "Spotify"
     format = ""
+
+[brightness]
+    appname = "BRIGHTNESS"
+    format = ""

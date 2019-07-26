@@ -107,8 +107,8 @@ new_window 1pixel
 bindsym $mod+Shift+d exec ~/.scripts/util/displayselect
 
 # Brightness Ctl
-bindsym XF86MonBrightnessUp exec xbright +75
-bindsym XF86MonBrightnessDown exec xbright -75
+bindsym XF86MonBrightnessUp exec ~/.scripts/util/brightness.sh up
+bindsym XF86MonBrightnessDown exec ~/.scripts/util/brightness.sh down
 # Redshift Ctl
 # bindsym Control+XF86MonBrightnessUp exec ~/.scripts/util/eyesave up
 # bindsym Control+XF86MonBrightnessDown exec ~/.scripts/util/eyesave down
