@@ -14,7 +14,7 @@ Usage:
     -d  install dependencies
     -a  install all
 ```
-You may need to adjust the path to your display backlight in `brightness.sh` and the path to your battery in `polybar/battery`
+You may need to adjust the path to your display backlight in `brightness.py` and the path to your battery in `polybar/battery`
 
 ## Dependencies:
 * [zsh](http://www.zsh.org/)
