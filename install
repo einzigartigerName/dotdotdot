@@ -115,12 +115,12 @@ install_dependencies () {
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
     printf "DONE: installing oh-my-zsh\n\n"
 
-    printf "--------------- xbright ---------------\n"
-    https://github.com/snobb/xbright.git
-    cd xbright
+    printf "--------------- illuminate ---------------\n"
+    https://github.com/einzigartigerName/illuminate.git
+    cd illuminate
     sudo make install clean
     cd ..
-    printf "DONE: installing xbright\n\n"
+    printf "DONE: installing illuminate\n\n"
 
     printf "----------- DONE -----------"
 }

@@ -22,7 +22,7 @@ You may need to adjust the path to your display backlight in `brightness.py` and
 * [i3-gaps](https://github.com/Airblader/i3)
 * [polybar](https://github.com/jaagr/polybar)
 * [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
-* [xbright](https://github.com/snobb/xbright)
+* [illuminate](https://github.com/einzigartigername/illuminate)
 * [st](https://st.suckless.org/)
 * [dmenu](https://tools.suckless.org/dmenu/) (I am using my fork of [dmenu2](https://github.com/einzigartigerName/dmenu))
 * [Firefox](https://www.mozilla.org/en-US/firefox/new/)
