@@ -139,7 +139,6 @@ bindsym $win+d exec ~/.scripts/util/status
 exec_always --no-startup-id ~/.scripts/startup/dunst
 exec_always --no-startup-id ~/.scripts/startup/polybar
 exec_always --no-startup-id feh --bg-scale ~/.wallpaper.jpg
-exec --no-startup-id tilda
-exec --no-startup-id i3-msg 'workspace S' && spotify
-exec --no-startup-id i3-msg 'workspace C' && franz
-exec --no-startup-id i3-msg 'workspace M' && thunderbird
+
+exec i3-msg 'workspace S' && spotify
+exec i3-msg 'workspace M' && thunderbird

@@ -5,6 +5,7 @@ scp="$HOME/.scripts"
 
 DEPS_PACMAN=(
     "git"
+    "rust"
     "i3-gaps"
     "dunst"
     "firefox"
@@ -118,7 +119,7 @@ install_dependencies () {
     printf "--------------- illuminate ---------------\n"
     https://github.com/einzigartigerName/illuminate.git
     cd illuminate
-    sudo make install clean
+    make && sudo make install clean
     cd ..
     printf "DONE: installing illuminate\n\n"
 
