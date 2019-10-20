@@ -1,0 +1,65 @@
+alt + Return
+    st
+
+alt + d
+    dmenu_run
+
+super + x
+    ~/.scripts/util/shutdown
+
+super + e
+    ~/.scripts/util/lock -l && playerctl pause
+
+alt + shift + d
+    ~/.scripts/util/displayselect
+
+# Brightness
+XF86MonBrightnessUp
+    xlight +75 && notify-send -a "BRIGHTNESS" "update"
+
+XF86MonBrightnessDown
+    xlight -75 && notify-send -a "BRIGHTNESS" "update"
+
+
+# Audio
+XF86AudioMute
+    pulseaudio-ctl mute
+
+XF86AudioLowerVolume
+    pulseaudio-ctl down
+
+XF86AudioRaiseVolume
+    pulseaudio-ctl up
+
+
+# Media
+control + XF86AudioMute
+    playerctl previous
+
+control + XF86AudioLowerVolume
+    playerctl play-pause
+
+control + XF86AudioRaiseVolume
+    playerctl next
+
+
+# Web
+alt + w
+    ~/.scripts/network/bookmarks ~/.scripts/network/.bm
+
+alt + shift + w
+    ~/.scripts/network/managebm ~/.scripts/network/.bm
+
+
+# zathura document viewer
+alt + z
+    zathura
+
+# htop
+alt + p
+    st -e htop
+
+
+# time as notification
+super + d
+    ~/.scripts/util/status

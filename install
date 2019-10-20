@@ -7,6 +7,7 @@ DEPS_PACMAN=(
     "git"
     "nasm"
     "i3-gaps"
+    "sxhkd"
     "dunst"
     "firefox"
     "qutebrowser"
@@ -46,6 +47,8 @@ install_config () {
     cp -r config/i3 $conf
     # Polybar
     cp -r config/polybar $conf
+    # sxhkd
+    cp -r config/sxhkd $conf
     # Wallpaper
     cp config/wallpaper.jpg ~/.wallpaper.jpg
 

@@ -20,6 +20,7 @@ You may need to adjust the path to your display backlight in `brightness.py` and
 * [zsh](http://www.zsh.org/)
 * [dunst](https://dunst-project.org/)
 * [i3-gaps](https://github.com/Airblader/i3)
+* [sxhkd](https://github.com/baskerville/sxhkd)
 * [polybar](https://github.com/jaagr/polybar)
 * [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 * [illuminate](https://github.com/einzigartigername/illuminate)

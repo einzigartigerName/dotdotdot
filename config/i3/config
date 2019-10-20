@@ -10,13 +10,13 @@ set $resize 2
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec st
+#bindsym $mod+Return exec st
 
 # kill focused window
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+#bindsym $mod+d exec dmenu_run
 
 # change focus
 bindsym $mod+h focus left
@@ -88,9 +88,9 @@ bindsym $mod+Shift+m move container to workspace M
 # restart i3 inplace
 bindsym $mod+Shift+r restart
 # exit i3
-bindsym $win+x exec ~/.scripts/util/shutdown
+#bindsym $win+x exec ~/.scripts/util/shutdown
 # lock
-bindsym $win+e exec ~/.scripts/util/lock -l && playerctl pause
+#bindsym $win+e exec ~/.scripts/util/lock -l && playerctl pause
 
 # resize window (you can also use the mouse for that)
 bindsym $win+h resize shrink width $resize px or $resize ppt
@@ -103,42 +103,11 @@ gaps inner 15
 client.focused #ee7600 #000000 #000000 #000000 #ee7600
 new_window 1pixel
 
-# Display select
-bindsym $mod+Shift+d exec ~/.scripts/util/displayselect
-
-# Brightness Ctl
-bindsym XF86MonBrightnessUp exec xlight +75 && notify-send -a "BRIGHTNESS" "update"
-bindsym XF86MonBrightnessDown exec xlight -75 && notify-send -a "BRIGHTNESS" "update"
-# Redshift Ctl
-# bindsym Control+XF86MonBrightnessUp exec ~/.scripts/util/eyesave up
-# bindsym Control+XF86MonBrightnessDown exec ~/.scripts/util/eyesave down
-
-# Sound and MediaPlayer Ctl
-bindsym XF86AudioMute exec pulseaudio-ctl mute
-bindsym XF86AudioLowerVolume exec pulseaudio-ctl down
-bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up
-bindsym Control+XF86AudioMute exec playerctl previous
-bindsym Control+XF86AudioLowerVolume exec playerctl play-pause
-bindsym Control+XF86AudioRaiseVolume exec playerctl next
-
-# Browser
-set $bookmark ~/.scripts/network/.bm
-bindsym $mod+w exec ~/.scripts/network/bookmarks $bookmark
-bindsym $mod+Shift+w exec ~/.scripts/network/managebm $bookmark
-
-# open zathura document-viewer
-bindsym $mod+z exec zathura
-
-# opens htop in st
-bindsym $mod+p exec st -e htop
-
-# send time as notification
-bindsym $win+d exec ~/.scripts/util/status
-
 # Startup
 exec_always --no-startup-id ~/.scripts/startup/dunst
 exec_always --no-startup-id ~/.scripts/startup/polybar
 exec_always --no-startup-id feh --bg-scale ~/.wallpaper.jpg
+exec_always --no-startup-id sxhkd
 
 exec i3-msg 'workspace S' && spotify
 exec i3-msg 'workspace M' && thunderbird
