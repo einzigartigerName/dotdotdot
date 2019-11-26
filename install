@@ -4,26 +4,26 @@ conf="$HOME/.config"
 scp="$HOME/.scripts"
 
 DEPS_PACMAN=(
-    "git"
-    "nasm"
-    "i3-gaps"
-    "sxhkd"
+    "arandr"
     "dunst"
-    "firefox"
-    "qutebrowser"
-    "surf"
-    "pulseaudio"
     "feh"
     "fzf"
+    "git"
+    "i3-gaps"
+    "nasm"
+    "playerctl"
+    "pulseaudio"
+    "qutebrowser"
+    "redshift"
+    "surf"
+    "sxhkd"
     "zathura"
     "zathura-pdf-mupdf"
-    "redshift"
-    "arandr"
 )
 
 DEPS_AUR=(
+    "brave"
     "polybar"
-    "playerctl"
     "pulseaudio-ctl"
 )
 
@@ -71,22 +71,12 @@ install_scripts () {
 install_dependencies () {
 
     # Installs from official Repos
-    printf "----------- install deps via pacman -----------"
-    repos=""
-    for item in ${DEPS_PACMAN[*]}
-    do
-        repos="$repos $item"
-    done
-    sudo pacman -S $repos
+    echo "----------- install deps via pacman -----------"
+    sudo pacman -S $DEPS_PACMAN
 
 
-    printf "----------- install deps from aur -----------"
-    # Installs from official Repos
-    repos_aur=""
-    for item in ${DEPS_AUR[*]}
-    do
-        repos_aur="$repos_aur $item"
-    done
+    echo "----------- install deps from aur -----------"
+    # Installs from AUR
     yay -S $repos_aur
 
     # installs via git
@@ -94,55 +84,89 @@ install_dependencies () {
     mkdir -p Programms
     cd Programms
 
-    printf "--------------- dmenu ---------------\n"
+    echo "--------------- dmenu ---------------\n"
     git clone https://github.com/einzigartigername/dmenu
     cd dmenu
     sudo make install clean
     cd ..
-    printf "DONE: installing dmenu\n\n"
+    echo "DONE: installing dmenu\n\n"
 
-    printf "--------------- st ---------------\n"
+    echo "--------------- st ---------------\n"
     git clone https://github.com/LukeSmithxyz/st.git
     cd st
     sudo make install clean
     cd ..
-    printf "DONE: installing st\n\n"
+    echo "DONE: installing st\n\n"
 
-    printf "--------------- yay ---------------\n"
+    echo "--------------- yay ---------------\n"
     git clone https://aur.archlinux.org/yay.git
     cd yay
     makepkg -sic
     cd ..
-    printf "DONE: installing yay\n\n"
+    echo "DONE: installing yay\n\n"
 
-    printf "--------------- oh-my-zsh ---------------\n"
+    echo "--------------- oh-my-zsh ---------------\n"
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-    printf "DONE: installing oh-my-zsh\n\n"
+    echo "DONE: installing oh-my-zsh\n\n"
 
-    printf "--------------- xlight ---------------\n"
+    echo "--------------- xlight ---------------\n"
     https://github.com/einzigartigerName/xlight.git
     cd illuminate
     make && sudo make install clean
     cd ..
-    printf "DONE: installing xlight\n\n"
+    echo "DONE: installing xlight\n\n"
 
-    printf "----------- DONE -----------"
+    echo "----------- DONE -----------"
 }
 
-case $1 in
-    "-a" )
-        install_dependencies
-        install_config
-        install_scripts
-        exit;;
-    "-c" )
-        install_config
-        exit;;
-    "-s" )
-        install_scripts
-        exit;;
-    "-d" )
-        install_dependencies
-        exit;;
-    * )     print_usage;;
-esac
+
+
+
+if [ -z "${1// }" ];
+then
+    print_usage
+    exit
+fi
+
+# flags for install opts
+FLAG_CONFIG=0
+FLAG_DEPS=0
+FLAG_SCRIPT=0
+
+while getopts "acsd" opt;
+do
+    case $opt in
+        a)  
+            # install all
+            FLAG_CONFIG=1
+            FLAG_DEPS=1
+            FLAG_SCRIPT=1
+            ;;
+        c)
+            # install config
+            FLAG_CONFIG=1
+            ;;
+        s)
+            # install scripts
+            FLAG_SCRIPT=1
+            ;;
+        d)
+            # install dependencies
+            FLAG_DEPS=1
+            ;;
+    esac
+done
+
+if [[ "$FLAG_DEPS" -eq 1 ]];
+then
+    install_dependencies
+fi
+
+if [ "$FLAG_CONFIG" -gt 0 ]; then
+    install_config
+fi
+
+if [[ "$FLAG_SCRIPT" -eq "1" ]];
+then
+    install_scripts
+fi
