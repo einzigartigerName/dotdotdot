@@ -9,14 +9,8 @@ set $resize 2
 
 floating_modifier $mod
 
-# start a terminal
-#bindsym $mod+Return exec st
-
 # kill focused window
 bindsym $mod+q kill
-
-# start dmenu (a program launcher)
-#bindsym $mod+d exec dmenu_run
 
 # change focus
 bindsym $mod+h focus left
@@ -41,9 +35,9 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+a layout stacking
-bindsym $mod+t layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+Shift+a layout stacking
+bindsym $mod+Shift+t layout tabbed
+bindsym $mod+Shift+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -87,10 +81,6 @@ bindsym $mod+Shift+m move container to workspace M
 
 # restart i3 inplace
 bindsym $mod+Shift+r restart
-# exit i3
-#bindsym $win+x exec ~/.scripts/util/shutdown
-# lock
-#bindsym $win+e exec ~/.scripts/util/lock -l && playerctl pause
 
 # resize window (you can also use the mouse for that)
 bindsym $win+h resize shrink width $resize px or $resize ppt
@@ -103,11 +93,15 @@ gaps inner 15
 client.focused #ee7600 #000000 #000000 #000000 #ee7600
 new_window 1pixel
 
+# Assign Programms to workspace
+assign [instance="^spotify$"] S
+assign [class="^Thunderbird$"] M
+
 # Startup
 exec_always --no-startup-id ~/.scripts/startup/dunst
 exec_always --no-startup-id ~/.scripts/startup/polybar
 exec_always --no-startup-id feh --bg-scale ~/.wallpaper.jpg
 exec_always --no-startup-id sxhkd
 
-exec i3-msg 'workspace S' && spotify
-exec i3-msg 'workspace M' && thunderbird
+exec spotify
+exec thunderbird

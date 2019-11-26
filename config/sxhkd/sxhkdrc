@@ -13,6 +13,9 @@ super + e
 alt + shift + d
     ~/.scripts/util/displayselect
 
+alt + a
+    ~/.scripts/util/audio_switch
+
 # Brightness
 XF86MonBrightnessUp
     xlight +75 && notify-send -a "BRIGHTNESS" "update"

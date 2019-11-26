@@ -1,0 +1,34 @@
+#!/usr/bin/zsh
+
+# index of sinks for pacmd
+sinks_index=(`pacmd list-sinks | sed -n -e 's/\**[[:space:]]index:[[:space:]]\([[:digit:]]\)/\1/p' | sed -e 's/^[[:space:]]*//'`)
+
+# description of sinks for readability
+sinks_description=$(pacmd list-sinks | sed -n -e 's/device.description[[:space:]]=[[:space:]]"\(.*\)"/\1/p' | sed -e 's/^[[:space:]]*//')
+
+# selected sink
+selected_description=$(echo -e ${sinks_description} | dmenu -p "Select Output Sink" -i)
+if [ -z "${selected_description// }" ]; then
+    exit
+fi
+
+# match sink name with index
+i=0
+selected_index=0
+echo $sinks_description | while read sd;
+do
+    let i++
+    if [ "$sd" = "$selected_description" ];
+    then
+        selected_index=$sinks_index[$i]
+        continue
+    fi
+done
+
+# set sink as default
+pacmd set-default-sink ${selected_index}
+
+# move all audio to new sink
+for app in $(pacmd list-sink-inputs | sed -n -e 's/index:[[:space:]]\([[:digit:]]\)/\1/p'); do
+    pacmd move-sink-input $app ${selected_index} 
+done
