@@ -19,6 +19,7 @@ DEPS_PACMAN=(
     "sxhkd"
     "zathura"
     "zathura-pdf-mupdf"
+    "zsh"
 )
 
 DEPS_AUR=(
