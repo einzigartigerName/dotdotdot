@@ -30,9 +30,9 @@ insert () {
 
     browser=""
     if [ "$bool" = "yes" ]; then
-        browser="$(echo -e "Firefox\nQutebrowser" | dmenu -i -p "Select Default Browser:")"
+        browser="$(echo -e "Brave\nQutebrowser" | dmenu -i -p "Select Default Browser:")"
         case $browser in
-            "Firefox" )     browser="firefox";;
+            "Brave" )       browser="brave";;
             "Qutebrowser" ) browser="qute";;
             *)              exit;;
         esac

@@ -7,7 +7,7 @@
 duckduck="duckduckgo.com/?q="
 
 # Browser
-firefox="firefox"
+brave="brave"
 qute="qutebrowser"
 surf="surf"
 
@@ -31,7 +31,7 @@ browser_selection="$(cat $1 | grep $selection | awk '{print $3}')"
 # Open
 browser=$surf
 case $browser_selection in
-    "firefox" )     browser=$firefox;;
+    "brave" )       browser=$brave;;
     "qute" )        browser=$qute;;
 esac
 
