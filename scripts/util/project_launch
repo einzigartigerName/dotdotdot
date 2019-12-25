@@ -1,0 +1,12 @@
+#!/usr/bin/env zsh
+
+project_dir="$HOME/Coding/"
+
+selection=$(ls -D $project_dir | dmenu -i -l 7 -p "Project to open:")
+if [ -z "${selection// }" ]; then
+    exit
+fi
+
+cd "$project_dir$selection"
+st &
+code "$project_dir$selection" &

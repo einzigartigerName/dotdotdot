@@ -1,6 +1,6 @@
 # Pacman
 alias pacman='sudo pacman'
-alias pkgupdate='sudo pacman -Syu'
+alias pkgupdate='yay -Syu'
 alias pkgclear='sudo pacman -R $(pacman -Qdtq)'
 
 # Tippfehler etc
@@ -31,5 +31,6 @@ alias la='cd ~/TUM/LA'
 alias theo='cd ~/TUM/THEO'
 alias theop='cd ~/TUM/THEO/code/theo'
 alias theou='cd ~/TUM/THEO/uebungen/theo'
-alias gad='cd ~/TUM/GAD/gad'
+alias gad='cd ~/TUM/GAD/gad/src/gad'
 alias rnvs='cd ~/TUM/RNVS'
+alias np='cd ~/TUM/NUMPROG'

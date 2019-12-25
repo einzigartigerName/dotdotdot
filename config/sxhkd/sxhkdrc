@@ -1,8 +1,15 @@
+#
+# wm inpependent hotkeys
+#
+
 alt + Return
     st
 
 alt + d
     dmenu_run
+
+alt + b
+    qutebrowser
 
 super + x
     ~/.scripts/util/shutdown
@@ -59,10 +66,13 @@ alt + z
     zathura
 
 # htop
-alt + p
+super + p
     st -e htop
-
 
 # time as notification
 super + d
     ~/.scripts/util/status
+
+# project quicklaunch
+alt + p
+    ~/.scripts/util/project_launch

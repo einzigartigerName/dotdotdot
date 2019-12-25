@@ -22,7 +22,7 @@ fi
 if [ $responds = "Yes" ]; then
 	case $selection in
 		"Logout" )		i3-msg exit;;
-		"Shutdown" )	poweroff -force;;
+		"Shutdown" )	poweroff;;
 		"Restart" )		reboot now;;
 		* )				exit;;
 	esac
