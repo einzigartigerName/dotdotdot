@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 conf="$HOME/.config"
 scp="$HOME/.scripts"
@@ -23,7 +23,7 @@ DEPS_PACMAN=(
 )
 
 DEPS_AUR=(
-    "brave"
+    "brave-bin"
     "polybar"
     "pulseaudio-ctl"
 )
@@ -73,17 +73,24 @@ install_dependencies () {
 
     # Installs from official Repos
     echo "----------- install deps via pacman -----------"
-    sudo pacman -S $DEPS_PACMAN
-
-
-    echo "----------- install deps from aur -----------"
-    # Installs from AUR
-    yay -S $repos_aur
+    sudo pacman -S ${DEPS_PACMAN[@]}
 
     # installs via git
     cd ~/
     mkdir -p Programms
     cd Programms
+
+    echo "--------------- yay ---------------\n"
+    git clone https://aur.archlinux.org/yay.git
+    cd yay
+    makepkg -sic
+    cd ..
+    echo "DONE: installing yay\n\n"
+
+    echo "----------- install deps from aur -----------"
+    # Installs from AUR
+    yay -S ${DEPS_AUR[@]}
+
 
     echo "--------------- dmenu ---------------\n"
     git clone https://github.com/einzigartigername/dmenu
@@ -98,13 +105,6 @@ install_dependencies () {
     sudo make install clean
     cd ..
     echo "DONE: installing st\n\n"
-
-    echo "--------------- yay ---------------\n"
-    git clone https://aur.archlinux.org/yay.git
-    cd yay
-    makepkg -sic
-    cd ..
-    echo "DONE: installing yay\n\n"
 
     echo "--------------- oh-my-zsh ---------------\n"
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
