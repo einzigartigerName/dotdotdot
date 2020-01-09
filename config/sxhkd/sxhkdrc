@@ -76,3 +76,7 @@ super + d
 # project quicklaunch
 alt + p
     ~/.scripts/util/project_launch
+
+# tagesschau
+alt + t
+    python ~/.scripts/util/tagesschau.py

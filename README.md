@@ -34,6 +34,7 @@ You may need to adjust the path to your display backlight in `brightness.py` and
 * [st](https://st.suckless.org/)
 * [surf](https://surf.suckless.org/)
 * [sxhkd](https://github.com/baskerville/sxhkd)
+* [vlc](https://www.videolan.org/vlc/)
 * [xlight](https://github.com/einzigartigername/xlight)
 * [zathura](https://wiki.archlinux.org/index.php/Zathura)
 * [zsh](http://www.zsh.org/)

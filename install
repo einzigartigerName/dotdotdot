@@ -17,6 +17,7 @@ DEPS_PACMAN=(
     "redshift"
     "surf"
     "sxhkd"
+    "vlc"
     "zathura"
     "zathura-pdf-mupdf"
     "zsh"
