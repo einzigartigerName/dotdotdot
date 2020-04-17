@@ -19,12 +19,14 @@ You may need to adjust the path to your display backlight in `brightness.py` and
 ## Dependencies:
 * [arandr](https://christian.amsuess.com/tools/arandr/)
 * [Brave](https://brave.com)
+* [betterlockscreen](https://github.com/pavanjadhaw/betterlockscreen)
 * [dmenu](https://tools.suckless.org/dmenu/) (I am using my fork of [dmenu2](https://github.com/einzigartigerName/dmenu))
 * [dunst](https://dunst-project.org/)
 * [feh](https://wiki.archlinux.org/index.php/Feh)
 * [fzf](https://github.com/junegunn/fzf)
 * [git](https://git-scm.com/)
 * [i3-gaps](https://github.com/Airblader/i3)
+* [i3-workspace-swap](https://github.com/einzigartigername/i3-workspace-swap)
 * [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 * [playerctl](https://github.com/acrisci/playerctl)
 * [polybar](https://github.com/jaagr/polybar)
@@ -40,5 +42,4 @@ You may need to adjust the path to your display backlight in `brightness.py` and
 * [zsh](http://www.zsh.org/)
 
 ## Credits
-* Lockscreen: I am using the [betterlockscreen](https://github.com/pavanjadhaw/betterlockscreen) by pavanjadhaw
 * Display Selection: [Script](https://github.com/LukeSmithxyz/voidrice/blob/master/.scripts/i3cmds/displayselect) by LukeSmitxyz

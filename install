@@ -9,10 +9,12 @@ DEPS_PACMAN=(
     "feh"
     "fzf"
     "git"
+    "htop"
     "i3-gaps"
     "nasm"
     "playerctl"
     "pulseaudio"
+    "python-pip"
     "qutebrowser"
     "redshift"
     "surf"
@@ -24,6 +26,7 @@ DEPS_PACMAN=(
 )
 
 DEPS_AUR=(
+	"betterlockscreen"
     "brave-bin"
     "polybar"
     "pulseaudio-ctl"
@@ -41,7 +44,7 @@ install_config () {
 
     # ZSH
     cp config/zsh/zshrc ~/.zshrc
-    cp config/zsh/nelson.zsh-theme ~/.oh-my-zsh/themes
+    cp config/zsh/nelson.zsh-theme ~/.oh-my-zsh/custom/themes
     cp config/zsh/alias ~/.alias
     # dunst
     cp -r config/dunst $conf
@@ -75,6 +78,10 @@ install_dependencies () {
     # Installs from official Repos
     echo "----------- install deps via pacman -----------"
     sudo pacman -S ${DEPS_PACMAN[@]}
+
+    # installs via pip
+    echo "----------- install deps via python-pip --------"
+    sudo pip install i3-workspace-swap
 
     # installs via git
     cd ~/

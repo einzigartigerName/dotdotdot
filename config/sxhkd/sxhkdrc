@@ -2,6 +2,9 @@
 # wm inpependent hotkeys
 #
 
+super + Escape
+    pkill -USR1 -x sxhkd
+
 alt + Return
     st
 
@@ -15,7 +18,7 @@ super + x
     ~/.scripts/util/shutdown
 
 super + e
-    ~/.scripts/util/lock -l && playerctl pause
+    playerctl pause && betterlockscreen -l
 
 alt + shift + d
     ~/.scripts/util/displayselect
@@ -77,6 +80,18 @@ super + d
 alt + p
     ~/.scripts/util/project_launch
 
-# tagesschau
+# tum quicklaunch
 alt + t
+    ~/.scripts/util/tum_launch
+
+# tagesschau
+super + t
     python ~/.scripts/util/tagesschau.py
+
+# number converter
+alt + n
+    echo "" | dmenu -p "Number to convert:" | xargs -r clnc | xargs -0r notify-send -a "MISC"
+
+# i3-workspace-swap: source is focused workspace + focus
+super + w
+    i3-workspace-swap --interactive dest --focus
