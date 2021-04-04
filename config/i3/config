@@ -35,9 +35,9 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+Shift+a layout stacking
-bindsym $mod+Shift+t layout tabbed
-bindsym $mod+Shift+e layout toggle split
+# bindsym $mod+Shift+a layout stacking
+# bindsym $mod+Shift+t layout tabbed
+# bindsym $mod+Shift+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -74,6 +74,21 @@ bindsym $mod+Shift+0 move container to workspace 10
 bindsym $mod+Shift+s move container to workspace S
 bindsym $mod+Shift+c move container to workspace C
 bindsym $mod+Shift+m move container to workspace M
+
+# swap focused workspace with x
+bindsym $win+1 exec i3-workspace-swap --destination 1 --focus
+bindsym $win+2 exec i3-workspace-swap --destination 2 --focus
+bindsym $win+3 exec i3-workspace-swap --destination 3 --focus
+bindsym $win+4 exec i3-workspace-swap --destination 4 --focus
+bindsym $win+5 exec i3-workspace-swap --destination 5 --focus
+bindsym $win+6 exec i3-workspace-swap --destination 6 --focus
+bindsym $win+7 exec i3-workspace-swap --destination 7 --focus
+bindsym $win+8 exec i3-workspace-swap --destination 8 --focus
+bindsym $win+9 exec i3-workspace-swap --destination 9 --focus
+bindsym $win+0 exec i3-workspace-swap --destination 10 --focus
+bindsym $win+s exec i3-workspace-swap --destination S --focus
+bindsym $win+c exec i3-workspace-swap --destination C --focus
+bindsym $win+m exec i3-workspace-swap --destination M --focus
 
 # restart i3 inplace
 bindsym $mod+Shift+r restart

@@ -47,13 +47,26 @@ XF86AudioRaiseVolume
 
 # Media
 control + XF86AudioMute
-    playerctl previous
+    playerctl -p spotify previous
 
 control + XF86AudioLowerVolume
-    playerctl play-pause
+    playerctl -p spotify play-pause
 
 control + XF86AudioRaiseVolume
-    playerctl next
+    playerctl -p spotify next
+
+# dedicated audio keys
+XF86AudioPlay
+    playerctl -p spotify play-pause
+
+XF86AudioStop
+    playerctl -p spotify stop
+
+XF86AudioNext
+    playerctl -p spotify next
+
+XF86AudioPrev
+    playerctl -p spotify previous
 
 
 # Web
@@ -80,10 +93,6 @@ super + d
 alt + p
     ~/.scripts/util/project_launch
 
-# tum quicklaunch
-alt + t
-    ~/.scripts/util/tum_launch
-
 # tagesschau
 super + t
     python ~/.scripts/util/tagesschau.py
@@ -95,3 +104,14 @@ alt + n
 # i3-workspace-swap: source is focused workspace + focus
 super + w
     i3-workspace-swap --interactive dest --focus
+
+super + shift + w
+    i3-focusl
+
+
+# Todo
+alt + t
+    st -e todo
+
+alt + shift + t
+    st -e todo -f ~/Coding/todo.md

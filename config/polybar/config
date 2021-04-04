@@ -215,6 +215,7 @@ type = custom/script
 exec = python ~/.scripts/polybar/spotify_status/monitor.py
 format-underline = #1db954
 tail = true
+click-left = i3-msg [class="Spotify"] focus
 
 [module/battery]
 type = custom/script

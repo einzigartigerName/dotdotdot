@@ -10,11 +10,20 @@ alias vim='nvim'
 # Network
 alias ns='sudo netctl start'
 alias nsa='sudo netctl stop-all'
-alias pping='ping -c 5 8.8.8.8'
+alias pping='ping -c 20 8.8.8.8'
+alias phs='python -m http.server'
 
 # configs
 alias i3conf='nvim ~/.config/i3/config'
 alias polyconf='nvim ~/.config/polybar/config'
+
+# LS
+alias l='ls -A -l -h --color=auto --group-directories-first'
+alias ll='ls -l -h --color=auto --group-directories-first'
+
+# Cabal
+alias cbuild='cabal v2-build'
+alias crun='cabal v2-run'
 
 # Dirs
 alias p='cd ~/Programms'
@@ -26,11 +35,19 @@ alias s='cd ~/.scripts'
 alias v='code .'
 
 # TUM
-alias t='cd ~/TUM'
-alias la='cd ~/TUM/LA'
-alias theo='cd ~/TUM/THEO'
-alias theop='cd ~/TUM/THEO/code/theo'
-alias theou='cd ~/TUM/THEO/uebungen/theo'
-alias gad='cd ~/TUM/GAD/gad/src/gad'
-alias rnvs='cd ~/TUM/RNVS'
+alias t='cd ~/TUM/WS2021'
+alias la='cd ~/TUM/LA/SS20/'
+alias theo='cd ~/TUM/THEO/SS20/'
+alias gad='cd ~/TUM/GAD/SS20/'
+alias grnvs='cd ~/TUM/GRNVS_2020'
 alias np='cd ~/TUM/NUMPROG'
+alias med='cd ~/TUM/WS/2021/MED1/'
+alias anal='cd ~/TUM/ANAL/'
+alias franz='cd ~/TUM/Franzoesisch/'
+alias dwt='cd ~/TUM/DWT/'
+
+
+
+# Todo
+alias ct='todo -f ~/Coding/todo.md'
+alias tt='todo -f ~/TUM/todo.md'
